@@ -1,0 +1,33 @@
+[project]
+name = "http-cli"
+version = "0.1.0"
+description = "A simple helper to make HTTP requests using stdlib http.client"
+readme = "README.md"
+authors = [
+    { name = "James Pickering", email = "james.pickering@airelogic.com" }
+]
+requires-python = ">=3.10"
+dependencies = []
+
+[project.scripts]
+http-cli = "http_cli:main"
+
+[build-system]
+requires = ["uv_build>=0.11.25,<0.12.0"]
+build-backend = "uv_build"
+
+[dependency-groups]
+dev = [
+    "cheroot>=11.1.2",
+    "nox>=2026.7.11",
+    "nox-uv>=0.8.0",
+    "pytest>=9.1.1",
+    "ruff>=0.15.21",
+    "ty>=0.0.59",
+]
+
+[tool.ruff.lint]
+preview = true
+
+[tool.ruff.format]
+preview = true
