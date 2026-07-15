@@ -16,7 +16,9 @@ def mock_wsgi_server(environ, start_response):
             "url": environ.get("PATH_INFO", "/"),
             "method": environ.get("REQUEST_METHOD", "GET"),
             "headers": {
-                key: value for key, value in environ.items() if key.startswith("HTTP_")
+                key.removeprefix("HTTP_"): value
+                for key, value in environ.items()
+                if key.startswith("HTTP_")
             },
             "body": environ.get("wsgi.input", b"").read().decode("iso-8859-1"),
         }).encode("utf-8")

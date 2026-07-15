@@ -36,3 +36,18 @@ def test_https(https_server: str, capsys: pytest.CaptureFixture[str]) -> None:
     assert result == 0
     captured = capsys.readouterr()
     assert '"url": "/get"' in captured.out
+
+
+def test_multiple_headers(server: str, capsys: pytest.CaptureFixture[str]) -> None:
+    url = f"{server}/headers"
+    result = run_http_cli([
+        "-H",
+        "X-Test-Header-1: Value1",
+        "-H",
+        "X-Test-Header-2: Value2",
+        url,
+    ])
+    assert result == 0
+    captured = capsys.readouterr()
+    assert '"X_TEST_HEADER_1": "Value1"' in captured.out
+    assert '"X_TEST_HEADER_2": "Value2"' in captured.out

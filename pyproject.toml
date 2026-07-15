@@ -1,6 +1,5 @@
 [project]
 name = "http-cli"
-version = "0.1.0"
 description = "A simple helper to make HTTP requests using stdlib http.client"
 readme = "README.md"
 authors = [
@@ -8,13 +7,17 @@ authors = [
 ]
 requires-python = ">=3.10"
 dependencies = []
+dynamic = ["version"]
 
 [project.scripts]
 http-cli = "http_cli:main"
 
 [build-system]
-requires = ["uv_build>=0.11.25,<0.12.0"]
-build-backend = "uv_build"
+requires = ["hatchling", "uv-dynamic-versioning"]
+build-backend = "hatchling.build"
+
+[tool.hatch.version]
+source = "uv-dynamic-versioning"
 
 [dependency-groups]
 dev = [
@@ -31,3 +34,4 @@ preview = true
 
 [tool.ruff.format]
 preview = true
+ 

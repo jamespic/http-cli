@@ -21,3 +21,5 @@ def fix(session: Session) -> None:
 @session(python=["3.10", "3.11", "3.12", "3.13", "3.14"], uv_groups=["dev"])
 def tests(session: Session) -> None:
     session.run("pytest")
+
+
