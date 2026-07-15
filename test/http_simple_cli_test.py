@@ -1,6 +1,6 @@
 import pytest
 
-from http_cli import main as run_http_cli
+from http_simple_cli import main as run_http_cli
 
 
 def test_happy_path(server: str, capsys: pytest.CaptureFixture[str]) -> None:

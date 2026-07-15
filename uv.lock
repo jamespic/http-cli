@@ -98,7 +98,7 @@ wheels = [
 ]
 
 [[package]]
-name = "http-cli"
+name = "http-simple-cli"
 source = { editable = "." }
 
 [package.dev-dependencies]

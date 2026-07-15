@@ -1,5 +1,5 @@
-HTTP-CLI
-========
+http-simple-cli
+===============
 
 A simple CLI to make HTTP requests using the stdlib http.client module.
 
@@ -10,7 +10,7 @@ to deal with security alerts for those OS dependencies).
 Usage
 -----
 
-http-cli [-h] [-X REQUEST] [-H HEADER] [-d DATA] [-v] [-o OUTPUT] [-k] [-t TIMEOUT] url
+http-simple-cli [-h] [-X REQUEST] [-H HEADER] [-d DATA] [-v] [-o OUTPUT] [-k] [-t TIMEOUT] url
 
 Barebones utility to make HTTP requests using the standard library http.client
 

@@ -1,5 +1,5 @@
 [project]
-name = "http-cli"
+name = "http-simple-cli"
 description = "A simple helper to make HTTP requests using stdlib http.client"
 readme = "README.md"
 authors = [
@@ -10,7 +10,7 @@ dependencies = []
 dynamic = ["version"]
 
 [project.scripts]
-http-cli = "http_cli:main"
+http-simple-cli = "http_simple_cli:main"
 
 [build-system]
 requires = ["hatchling", "uv-dynamic-versioning"]
